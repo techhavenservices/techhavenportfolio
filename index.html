@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechHaven</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("igkuUvgn0OJTYsEjZ"); 
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom Notification Toast */
+    #toast {
+      visibility: hidden;
+      min-width: 280px;
+      background-color: #ffffff;
+      color: #475569;
+      text-align: center;
+      border-radius: 12px;
+      padding: 16px;
+      position: fixed;
+      z-index: 9999;
+      right: 30px;
+      bottom: 30px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #60a5fa;
+      transition: 0.4s ease;
+      opacity: 0;
+      font-weight: 500;
+    }
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    .pastel-gradient {
+      background: linear-gradient(135deg, #dbeafe 0%, #fce7f3 100%);
+    }
+    .pastel-glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="toast">Message sent! Check your inbox. ✨</div>
+
+  <nav class="navbar shadow-lg px-6 py-4 fixed-top pastel-glass">
+    <div class="container flex justify-between items-center">
+      <img src="./assets/img/Black and White Modern Personal Brand Logo-modified.png" style="width: 40px;" alt="Logo">
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="#services" class="navLink">Services</a>
+        <a href="#projects" class="navLink">Projects</a>
+        <a href="#blog" class="navLink">Blog</a>
+        <a href="#contact" class="navLink">Contact</a>
+      </div>
+      <button class="md:hidden text-3xl" onclick="toggleSidebar()">☰</button>
+    </div>
+  </nav>
+
+  <div id="sidebar" class="sidebar">
+    <button class="closeBtn" onclick="toggleSidebar()">×</button>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#projects" onclick="toggleSidebar()">Projects</a>
+    <a href="#blog" onclick="toggleSidebar()">Blog</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
+  </div>
+
+  <header id="hero" class="h-screen flex justify-center items-center text-center px-6 pastel-gradient relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80" alt="Hero Background" class="w-full h-full object-cover opacity-20" />
+    </div>
+    <div class="relative z-10 max-w-2xl">
+      <h1 class="text-5xl font-bold mb-4 text-white drop-shadow-lg">
+        I Create <span id="typed" class="text-[#f472b6]"></span>
+      </h1>
+      <p class="text-white text-lg opacity-90 mb-6">Soft, modern and professional digital experiences.</p>
+      <a href="#projects" class="px-8 py-3 bg-[#60a5fa] text-white rounded-xl shadow-lg hover:bg-[#f472b6] transition font-semibold no-underline inline-block">Explore Projects</a>
+    </div>
+  </header>
+  <script>
+(function() {
+      //  REPLACE with your actual Public Key from Account Settings
+      emailjs.init("igkuUvgn0OJTYsEjZ"); 
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom Toast Notification */
+    #toast {
+      visibility: hidden;
+      min-width: 280px;
+      background-color: #ffffff;
+      color: #334155;
+      text-align: center;
+      border-radius: 12px;
+      padding: 16px;
+      position: fixed;
+      z-index: 9999;
+      right: 30px;
+      bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-left: 6px solid #60a5fa;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .pastel-gradient {
+      background: linear-gradient(135deg, #dbeafe 0%, #fce7f3 100%);
+    }
+    .pastel-glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="toast">Messages sent successfully! ✨</div>
+
+  <nav class="navbar shadow-lg px-6 py-4 fixed-top pastel-glass">
+    <div class="container flex justify-between items-center">
+      <img src="./assets/img/Black and White Modern Personal Brand Logo-modified.png" style="width: 40px;" alt="Logo">
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="#services" class="navLink">Services</a>
+        <a href="#projects" class="navLink">Projects</a>
+        <a href="#blog" class="navLink">Blog</a>
+        <a href="#contact" class="navLink">Contact</a>
+      </div>
+      <button class="md:hidden text-3xl" onclick="toggleSidebar()">☰</button>
+    </div>
+  </nav>
+
+  <div id="sidebar" class="sidebar">
+    <button class="closeBtn" onclick="toggleSidebar()">×</button>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#projects" onclick="toggleSidebar()">Projects</a>
+    <a href="#blog" onclick="toggleSidebar()">Blog</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
+  </div>
+
+  <header id="hero" class="h-screen flex justify-center items-center text-center px-6 pastel-gradient relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80" alt="Hero Background" class="w-full h-full object-cover opacity-20" />
+    </div>
+    <div class="relative z-10 max-w-2xl">
+      <h1 class="text-5xl font-bold mb-4 text-white drop-shadow-lg">
+        I Create <span id="typed" class="text-[#f472b6]"></span>
+      </h1>
+      <p class="text-white text-lg opacity-90 mb-6">Soft, modern and professional digital experiences.</p>
+      <a href="#contact" class="px-8 py-3 bg-[#60a5fa] text-white rounded-xl shadow-lg hover:bg-[#f472b6] transition font-semibold no-underline inline-block">Work With Me</a>
+    </div>
+  </header>
+
+  <section id="contact" class="section py-20 bg-white">
+    <h2 class="section-title text-center text-4xl font-bold mb-10">Contact Me</h2>
+    <div class="contact-card max-w-lg mx-auto p-8 rounded-2xl shadow-lg border border-slate-50">
+      <form id="contact-form" class="flex flex-col gap-4">
+        <input type="text" id="user_name" placeholder="Your Name" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required />
+        <input type="email" id="user_email" placeholder="Your Email" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required />
+        <textarea id="message" placeholder="Your Message" rows="5" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required></textarea>
+        
+        <button type="submit" id="submit-btn" class="py-3 bg-[#60a5fa] text-white rounded-xl shadow-lg hover:bg-[#f472b6] transition font-semibold uppercase tracking-wide">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // 1. Initialize Typed.js
+    new Typed('#typed', {
+      strings: ['Websites', 'Experiences', 'Designs'],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    });
+
+    // 2. Sidebar Logic
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      if(sidebar) sidebar.classList.toggle('active');
+    }
+
+    // 3. Toast Notification Logic
+    function showToast(message, isError = false) {
+      const toast = document.getElementById("toast");
+      toast.innerText = message;
+      toast.style.borderLeft = isError ? "6px solid #f87171" : "6px solid #60a5fa";
+      toast.classList.add("show");
+      setTimeout(() => { toast.classList.remove("show"); }, 4000);
+    }
+
+    // 4. Dual Email Logic
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // CRITICAL: Stops the 422 error and URL refresh
+      
+      const btn = document.getElementById('submit-btn');
+      
+      // CONFIGURATION: Check these in your dashboard!
+      const serviceID = 'service_k0sko8q';
+      const contactTemplateID = 'template_paywn1d'; 
+      const autoReplyTemplateID = 'template_usdenf1';
+
+      // Capture variables to match your templates EXACTLY
+      const templateParams = {
+        user_name: document.getElementById('user_name').value,
+        user_email: document.getElementById('user_email').value,
+        message: document.getElementById('message').value
+      };
+
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      // FIRST EMAIL: To You
+      emailjs.send(serviceID, contactTemplateID, templateParams)
+        .then(() => {
+          // SECOND EMAIL: Auto-Reply to User
+          return emailjs.send(serviceID, autoReplyTemplateID, templateParams);
+        })
+        .then(() => {
+          btn.innerText = 'Send Message';
+          btn.disabled = false;
+          showToast("Message sent! Check your inbox. ✨");
+          this.reset();
+        })
+        .catch((err) => {
+          btn.innerText = 'Send Message';
+          btn.disabled = false;
+          showToast("Send failed. Check console.", true);
+          console.error('EmailJS Error:', err);
+        });
+    });
+  </script>
+  <!-- <section id="contact" class="section py-20 bg-white">
+    <h2 class="section-title text-center text-4xl font-bold mb-10">Contact Me</h2>
+    <div class="contact-card max-w-lg mx-auto p-8 rounded-2xl shadow-lg border border-slate-50">
+      <form id="contact-form" class="flex flex-col gap-4">
+        <input type="text" name="user_name" id="user_name" placeholder="Your Name" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required />
+        <input type="email" name="user_email" id="user_email" placeholder="Your Email" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required />
+        <textarea name="message" id="message" placeholder="Your Message" rows="5" class="p-3 border border-slate-200 rounded-xl focus:outline-[#60a5fa]" required></textarea>
+        
+        <button type="submit" id="submit-btn" class="py-3 bg-[#60a5fa] text-white rounded-xl shadow-lg hover:bg-[#f472b6] transition font-semibold uppercase tracking-wide">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // 1. Typed.js Initialization
+    new Typed('#typed', {
+      strings: ['Websites', 'Experiences', 'Designs'],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    });
+
+    // 2. Sidebar Logic
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    // 3. Toast Function
+    function showToast(message, isError = false) {
+      const toast = document.getElementById("toast");
+      toast.innerText = message;
+      toast.style.borderLeft = isError ? "6px solid #f87171" : "6px solid #60a5fa";
+      toast.classList.add("show");
+      setTimeout(() => { toast.classList.remove("show"); }, 4000);
+    }
+
+    // 4. Dual Email Execution Logic
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const btn = document.getElementById('submit-btn');
+      
+      // Configuration
+      const serviceID = 'service_k0sko8q';
+      const contactTemplateID = 'template_paywn1d'; // Notification to YOU
+      const autoReplyTemplateID = 'template_usdenf1'; // Receipt to USER
+
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      // First Email: Contact Notification to You
+      emailjs.sendForm(serviceID, contactTemplateID, this)
+        .then(() => {
+          // Second Email: Auto-reply to User
+          return emailjs.sendForm(serviceID, autoReplyTemplateID, this);
+        })
+        .then(() => {
+          btn.innerText = 'Send Message';
+          btn.disabled = false;
+          showToast("Message sent! Check your inbox. ✨");
+          this.reset();
+        })
+        .catch((err) => {
+          btn.innerText = 'Send Message';
+          btn.disabled = false;
+          showToast("Error sending message. Try again.", true);
+          console.error('EmailJS Error:', err);
+        });
+    });
+  </script> -->
+</body>
+</html>
